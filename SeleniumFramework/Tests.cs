@@ -3,42 +3,33 @@ using System.Collections.Generic;
 using System.Text;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SeleniumFramework.Selenium;
 using Xunit;
 
 namespace SeleniumFramework
 {
-    public class Tests : IDisposable
+    public class Tests 
     {
-        public IWebDriver driver;
+        readonly Browser _browse = new Browser();
+        private readonly IWebDriver _driver;
 
         public Tests()
         {
-            try
-            {
-                driver = new ChromeDriver();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Exception while starting Browser " + e.InnerException);
-            }
+            _driver = _browse.GetDriver();
         }
-
+        
 
         [Fact]
         public void ValidateTitle()
         {
-            driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl("https://beteasy.com.au/sports-betting");
-            Assert.Equal("Sports Betting & Odds Online | BetEasy", driver.Title);
+            _driver.Manage().Window.Maximize();
+            _driver.Navigate().GoToUrl("https://beteasy.com.au/sports-betting");
+            Assert.Equal("Sports Betting & Odds Online | BetEasy", _driver.Title);
         }
 
 
 
 
-        public void Dispose()
-        {
-            driver.Quit();
-        }
 
 
     }
