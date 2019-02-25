@@ -6,20 +6,24 @@ using OpenQA.Selenium.Chrome;
 
 namespace SeleniumFramework.Selenium
 {
-    public class Browser
+    public static class Browser
     {
-        
-        public IWebDriver GetDriver()
+        private static IWebDriver _driver;
+
+        static Browser()
         {
-            return new ChromeDriver();
+            _driver = new ChromeDriver();
         }
 
+        public static string Title
+        {
+            get => _driver.Title;
+            set => throw new NotImplementedException();
+        }
 
-
-
-
-
-
-
+        public static void GoTo(string url)
+        {
+            _driver.Navigate().GoToUrl(url);
+        }
     }
     }
