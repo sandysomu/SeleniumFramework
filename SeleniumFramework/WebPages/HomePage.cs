@@ -19,7 +19,7 @@ namespace SeleniumFramework.WebPages
             Browser.GoTo(Url);
         }
 
-        public void SelectAutomationExercisePage()
+        public void SelectExercisePage()
         {
            IWebElement exerciseLink = Browser.Driver.FindElement(By.CssSelector("#top-menu > li:nth-child(3) > a:nth-child(1)")); 
             exerciseLink.Click();

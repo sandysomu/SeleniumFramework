@@ -20,9 +20,30 @@ namespace SeleniumFramework.Test
         public void AutomationExercisePage()
         {
             Pages.HomePage.Goto();
-            Pages.HomePage.SelectAutomationExercisePage();
+            Pages.HomePage.SelectExercisePage();
             Assert.True(Pages.HomePage.IsAtExercisePage());
         }
+
+        [Fact]
+        public void SubmitForm()
+        {
+            Pages.HomePage.Goto();
+            Pages.HomePage.SelectExercisePage();
+            Pages.ExercisePage.GoToFillForm();
+           // Pages.FillingOutForms;
+            Assert.True(Pages.ExercisePage.FormFilledSuccessfully());
+        }
+
+
+
+
+
+
+
+
+
+
+
 
 
         public void Dispose()

@@ -9,10 +9,10 @@ namespace SeleniumFramework.WebPages
     {
         public static HomePage HomePage => new HomePage();
 
-       
+        public static ExercisePage ExercisePage => new ExercisePage();
+        public static FillingOutForms FillingOutForms => new FillingOutForms();
+
     }
-
     
-
 
 }
