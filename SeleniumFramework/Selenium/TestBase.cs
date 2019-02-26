@@ -9,6 +9,8 @@ namespace SeleniumFramework.Selenium
 
         public TestBase()
         {
+
+
                 
         }
 
@@ -16,6 +18,7 @@ namespace SeleniumFramework.Selenium
 
         public void Dispose()
         {
+
            
         }
 

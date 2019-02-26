@@ -18,12 +18,20 @@ namespace SeleniumFramework.Selenium
         public static string Title
         {
             get => _driver.Title;
-            set => throw new NotImplementedException();
         }
+
+        public static IWebDriver Driver => _driver;
+        
 
         public static void GoTo(string url)
         {
             _driver.Navigate().GoToUrl(url);
+            _driver.Manage().Window.Maximize();
+        }
+
+       public static void CloseBrowser()
+        {
+            _driver.Close();
         }
     }
-    }
+}
