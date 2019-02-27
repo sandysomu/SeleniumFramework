@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using OpenQA.Selenium;
@@ -11,7 +13,10 @@ namespace TheInternetThings.Selenium
     {
         static Browser()
         {
-            Driver = new ChromeDriver();
+            Driver = new ChromeDriver(@"C:\Development\Selenium\TheInternetThings\bin\Debug\netcoreapp2.2\");
+
+          //  Driver = new ChromeDriver(".");
+
         }
 
 

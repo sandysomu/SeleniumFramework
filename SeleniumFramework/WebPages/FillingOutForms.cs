@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using SeleniumFramework.Selenium;
 
 namespace SeleniumFramework.WebPages
@@ -22,6 +23,14 @@ namespace SeleniumFramework.WebPages
             Browser.Driver.FindElement(By.CssSelector("#et_pb_contact_name_0")).SendKeys("Name - Sandeep Singh");
             Browser.Driver.FindElement(By.CssSelector("#et_pb_contact_message_0")).SendKeys("Message - This message has been inserted by automation script.");
             Browser.Driver.FindElement(By.CssSelector("button.et_pb_contact_submit:nth-child(1)")).Click();
+        }
+
+        public void FillForm(string name, string message)
+        {
+            Browser.Driver.FindElement(By.CssSelector("#et_pb_contact_name_0")).SendKeys(name);
+            Browser.Driver.FindElement(By.CssSelector("#et_pb_contact_message_0")).SendKeys(message);
+            Browser.Driver.FindElement(By.CssSelector("button.et_pb_contact_submit:nth-child(1)")).Click();
+
         }
     }
 }

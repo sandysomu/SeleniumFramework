@@ -25,7 +25,6 @@ namespace SeleniumFramework.Test
         }
 
         [Fact]
-        
         public void SubmitForm()
         {
             Pages.HomePage.Goto();
@@ -35,6 +34,17 @@ namespace SeleniumFramework.Test
             Assert.True(Pages.ExercisePage.FormFilledSuccessfully());
         }
 
+
+        [Theory]
+        [InlineData("Title-Sandeep", "Message-Sandeep")]
+        public void SubmitFormUsingData(string name, string message)
+        {
+            Pages.HomePage.Goto();
+            Pages.HomePage.SelectExercisePage();
+            Pages.ExercisePage.GoToFillForm();
+            Pages.FillingOutForms.FillForm(name, message);
+            Assert.True(Pages.ExercisePage.FormFilledSuccessfully());
+        }
 
 
         public void Dispose()
