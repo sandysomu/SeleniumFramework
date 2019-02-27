@@ -25,24 +25,15 @@ namespace SeleniumFramework.Test
         }
 
         [Fact]
+        
         public void SubmitForm()
         {
             Pages.HomePage.Goto();
             Pages.HomePage.SelectExercisePage();
             Pages.ExercisePage.GoToFillForm();
-           // Pages.FillingOutForms;
+            Pages.FillingOutForms.FillForm();
             Assert.True(Pages.ExercisePage.FormFilledSuccessfully());
         }
-
-
-
-
-
-
-
-
-
-
 
 
 
