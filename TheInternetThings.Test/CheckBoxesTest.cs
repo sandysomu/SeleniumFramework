@@ -10,8 +10,6 @@ namespace TheInternetThings.Test
         [Fact]
         public void Can_We_Open_HomePage()
         {
-            Pages.HomePage.GoTo();
-            Assert.True(Pages.HomePage.IsAt());
             Pages.HomePage.GoToCheckBoxPage();
             Assert.True(Pages.CheckBoxPage.IsAt());
         }
@@ -34,14 +32,8 @@ namespace TheInternetThings.Test
 
          
 
-
-
-
-
-
         public void BasicOperation()
         {
-            Pages.HomePage.GoTo();
             Assert.True(Pages.HomePage.IsAt());
             Pages.HomePage.GoToCheckBoxPage();
         }

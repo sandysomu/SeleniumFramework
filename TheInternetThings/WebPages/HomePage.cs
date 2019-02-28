@@ -10,11 +10,22 @@ namespace TheInternetThings.WebPages
         private static string url = "http://the-internet.herokuapp.com/";
         private static string title = "The Internet";
 
+        public void GoToAlertPage()
+        {
+            Browser.Driver.FindElement(By.CssSelector("#content > ul:nth-child(4) > li:nth-child(25) > a:nth-child(1)")).Click();
+        }
 
-        public void GoTo()
+        public void GoToFramesPage()
+        {
+            Browser.Driver.FindElement(By.CssSelector("#content > ul:nth-child(4) > li:nth-child(19) > a:nth-child(1)")).Click();
+        }
+
+
+        public HomePage()
         {
             Browser.GoToUrl(url);
         }
+
 
         public bool IsAt()
         {

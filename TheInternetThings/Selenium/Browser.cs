@@ -13,10 +13,9 @@ namespace TheInternetThings.Selenium
     {
         static Browser()
         {
-            Driver = new ChromeDriver(@"C:\Development\Selenium\TheInternetThings\bin\Debug\netcoreapp2.2\");
-
-          //  Driver = new ChromeDriver(".");
-
+            //  Driver = new ChromeDriver(@"C:\Development\Selenium\TheInternetThings\bin\Debug\netcoreapp2.2\");
+            Driver = new ChromeDriver(@"C:\Sandy\SeleniumFramework\TheInternetThings\bin\Debug\netcoreapp2.2\");
+            //  Driver = new ChromeDriver(".");
         }
 
 
@@ -30,10 +29,12 @@ namespace TheInternetThings.Selenium
             Driver.Manage().Window.Maximize();
             Driver.Navigate().GoToUrl(url);
         }
-
+        
         public static void CloseWindow()
         {
             Driver.Close();
         }
+
+
     }
 }

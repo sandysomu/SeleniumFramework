@@ -9,11 +9,12 @@ namespace TheInternetThings.WebPages
         public void SelectFirstOption()
         {
             var selectedElement = new SelectElement(Browser.Driver.FindElement(By.CssSelector("#dropdown")));
-
             selectedElement.SelectByIndex(1);
-
-
         }
 
+        public bool IsFirstOptionSelected()
+        {
+          return  new SelectElement(Browser.Driver.FindElement(By.CssSelector("#dropdown"))).SelectedOption.Text == "Option 1";
+        }
     }
 }
